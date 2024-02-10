@@ -1,0 +1,125 @@
+.main {
+    background-color: $color-primary;
+    font-size: 1.2rem;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 15rem;
+
+    @include respond(tab-land) {
+        padding: 3rem 5rem;
+    }
+
+    @include respond(tab-port) {
+        padding: 3rem 5rem;
+    }
+
+    @include respond(phone) {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 2rem;
+    }
+
+    &--result {
+        color: $color-tertiary;
+        font-size: 1.4rem;
+        font-weight: 500;
+
+        @include respond(tab-port) {
+            display: none;
+        }
+    }
+
+    &--tags {
+        display: flex;
+
+        button {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: $color-white;
+            font-family: inherit;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: .5rem 2rem;
+            border-radius: 20px;
+            background-color: $color-primary-light-2;
+            border: none;
+
+            @include respond(tab-port) {
+                font-size: 1rem;
+                padding: .5rem 1rem;
+            }
+
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+
+            & img {
+                width: 12px;
+                height: 12px;
+                margin-left: .5rem;
+            }
+        }
+    }
+
+    &--sort {
+
+        p,
+        form {
+            display: inline-block;
+
+            @include respond(tab-port) {
+                font-size: 1rem;
+            }
+        }
+
+        p {
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        form {
+            margin-left: 1rem;
+
+            select {
+                font-family: inherit;
+                font-size: inherit;
+                font-weight: 500;
+                padding: .5rem 1rem;
+                color: $color-white;
+                background-color: $color-primary-light-2;
+                border-radius: 5px;
+                border: none;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+.movies {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 5rem;
+    row-gap: 2rem;
+    padding: 0 15rem 2rem;
+
+
+    @include respond(tab-land) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        padding: 0 5rem 2rem;
+    }
+
+    @include respond(phone) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+  </head>
+  <body>
+    <aside class="aside">
+      <div class="aside--navigation">
+        <div class="aside--navigation-logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="#b6476a"
+              d="m0 .234l21.912 20.537s.412.575-.124 1.151c-.535.576-1.236.083-1.236.083L0 .234zm6.508 2.058l17.01 15.638s.413.576-.123 1.152c-.534.576-1.235.083-1.235.083L6.508 2.292zM1.936 6.696l17.01 15.638s.412.576-.123 1.152s-1.235.082-1.235.082L1.936 6.696zm10.073-2.635l11.886 10.927s.287.401-.087.805s-.863.058-.863.058L12.009 4.061zm-8.567 7.737l11.886 10.926s.285.4-.088.803c-.375.403-.863.059-.863.059L3.442 11.798zm14.187-5.185l5.426 4.955s.142.188-.044.377c-.185.188-.428.027-.428.027l-4.954-5.358v-.001zM6.178 17.231l5.425 4.956s.144.188-.042.377s-.427.026-.427.026l-4.956-5.359z"
+            />
+          </svg>
+        </div>
+        <div class="aside--navigation-new">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zM8.5 15H7.3l-2.55-3.5V15H3.5V9h1.25l2.5 3.5V9H8.5v6zm5-4.74H11v1.12h2.5v1.26H11v1.11h2.5V15h-4V9h4v1.26zm7 3.74c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1V9h1.25v4.51h1.13V9.99h1.25v3.51h1.12V9h1.25v5z"
+            />
+          </svg>
+        </div>
+        <div class="aside--navigation-filter">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 256 256"
+          >
+            <path
+              fill="currentColor"
+              d="M208 36H48a28.1 28.1 0 0 0-28 28v112a28.1 28.1 0 0 0 28 28h160a28.1 28.1 0 0 0 28-28V64a28.1 28.1 0 0 0-28-28Zm4 140a4 4 0 0 1-4 4H48a4 4 0 0 1-4-4V64a4 4 0 0 1 4-4h160a4 4 0 0 1 4 4Zm-40 52a12 12 0 0 1-12 12H96a12 12 0 0 1 0-24h64a12 12 0 0 1 12 12Z"
+            />
+          </svg>
+          <div class="menu-filter">
+            <div class="menu-title">
+              <h1>Movies</h1>
+            </div>
+            <div class="menu-list">
+              <ul>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Adventure</a></li>
+                <li><a href="#">Animation</a></li>
+                <li><a href="#">Biography</a></li>
+                <li><a href="#">Comedy</a></li>
+                <li><a href="#">Crime</a></li>
+                <li><a href="#">Documentary</a></li>
+                <li><a href="#">Drama</a></li>
+                <li><a href="#">Family</a></li>
+                <li><a href="#">Fanstasy</a></li>
+                <li><a href="#">Film Noir</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Horror</a></li>
+              </ul>
+            </div>
+            <div class="menu-title">
+              <h1>Ratings</h1>
+            </div>
+            <div class="menu-range">
+              <form action="">
+                <label for="imdb">IMDB (0 to 10)</label>
+                <input
+                  type="range"
+                  name="imdb"
+                  id="imdb"
+                  min="0"
+                  max="10"
+                  step=".1"
+                />
+              </form>
+              <form action="">
+                <label for="RottenTomatoes">R. Tomatoes (0 to 100%)</label>
+                <input
+                  type="range"
+                  name="RottenTomatoes"
+                  id="RottenTomatoes"
+                  min="0"
+                  max="100"
+                  step="1"
+                />
+              </form>
+            </div>
+            <div class="menu-sort">
+              <form>
+                <select>
+                  <option value="Genre">Release Year</option>
+                  <option value="IMDB">Most Visited</option>
+                  <option value="Genre">Genre</option>
+                  <option value="Genre">Name</option>
+                </select>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="aside--navigation-liked">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 256 256"
+          >
+            <path
+              fill="currentColor"
+              d="M128 228a12.6 12.6 0 0 1-5.9-1.5C117.8 224 16 166.2 16 92a64 64 0 0 1 112-42.4A64 64 0 0 1 240 92c0 74.2-101.8 132-106.1 134.5a12.6 12.6 0 0 1-5.9 1.5ZM80 52a40 40 0 0 0-40 40c0 51.2 67.4 97.2 88 110c20.6-12.8 88-58.8 88-110a40 40 0 0 0-76.9-15.4a12 12 0 0 1-22.2 0A39.9 39.9 0 0 0 80 52Z"
+            />
+          </svg>
+        </div>
+        <div class="aside--navigation-watchlist">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3z"
+            />
+          </svg>
+        </div>
+        <div class="aside--navigation-categories">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M4 20q-.825 0-1.412-.587Q2 18.825 2 18V6q0-.825.588-1.412Q3.175 4 4 4h6l2 2h8q.825 0 1.413.588Q22 7.175 22 8H11.175l-2-2H4v12l2.4-8h17.1l-2.575 8.575q-.2.65-.737 1.038Q19.65 20 19 20Zm2.1-2H19l1.8-6H7.9Zm0 0l1.8-6l-1.8 6ZM4 8V6v2Z"
+            />
+          </svg>
+        </div>
+        <div class="aside--navigation-tobereleased">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M12 18q2.075 0 3.538-1.462Q17 15.075 17 13q0-2.075-1.462-3.538Q14.075 8 12 8Q9.925 8 8.463 9.462Q7 10.925 7 13q0 2.075 1.463 3.538Q9.925 18 12 18Zm0-2q-1.25 0-2.125-.875T9 13q0-1.25.875-2.125T12 10q1.25 0 2.125.875T15 13q0 1.25-.875 2.125T12 16Zm6-6q.425 0 .712-.288Q19 9.425 19 9t-.288-.713Q18.425 8 18 8t-.712.287Q17 8.575 17 9t.288.712Q17.575 10 18 10ZM4 21q-.825 0-1.412-.587Q2 19.825 2 19V7q0-.825.588-1.412Q3.175 5 4 5h3.15L8.7 3.325q.15-.15.337-.238Q9.225 3 9.425 3h5.15q.2 0 .388.087q.187.088.337.238L16.85 5H20q.825 0 1.413.588Q22 6.175 22 7v12q0 .825-.587 1.413Q20.825 21 20 21Zm16-2V7h-4.05l-1.825-2h-4.25L8.05 7H4v12Zm-8-6Z"
+            />
+          </svg>
+        </div>
+      </div>
+    </aside>
+    <div class="page">
+      <header class="header">
+        <div class="header--search">
+          <form action="">
+            <button type="submit">
+              <img src="img/icons/search icon.png" alt="search icon" />
+            </button>
+            <input
+              type="text"
+              placeholder="Search movies, actors, editors, etc"
+              name="search"
+            />
+          </form>
+        </div>
+        <div class="header--user">
+          <div class="header--user-status">
+            <button>Premium</button>
+          </div>
+          <div class="header--user-account">
+            <a href="#">
+              <img src="img/user photo.jpg" alt="user photo" />
+            </a>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <div class="filter">
+          <p class="filter--result">6248 Movies</p>
+          <div class="filter--tags">
+            <button class="tag">
+              <p>Action</p>
+              <img
+                class="close-tag"
+                src="img/icons/close icon.png"
+                alt="close icons"
+              />
+            </button>
+            <button>
+              <p>Romance</p>
+              <img src="img/icons/close icon.png" alt="close icons" />
+            </button>
+            <button>
+              <p>Adventure</p>
+              <img src="img/icons/close icon.png" alt="close icons" />
+            </button>
+            <button>
+              <p>Animation</p>
+              <img src="img/icons/close icon.png" alt="close icons" />
+            </button>
+          </div>
+          <div class="filter--sort">
+            <p>sort by</p>
+            <form class="form--sort">
+              <select>
+                <option value="Genre">Name</option>
+                <option value="Genre">Year</option>
+                <option value="IMDB">IMDB Rating</option>
+                <option value="IMDB">Most Visited</option>
+              </select>
+            </form>
+          </div>
+        </div>
+        <div class="movies">
+          <div class="post">
+            <div class="post--img">
+              <img src="img/Avatar.jpg" alt="Avatar: The Way of Water" />
+            </div>
+            <div class="post--title">
+              <p>Avatar</p>
+            </div>
+            <div class="post--year">
+              <p>2022</p>
+            </div>
+            <div class="post--info ltr">
+              <div class="post--info-img">
+                <img src="img/Avatar.jpg" alt="Avatar: The Way of Water" />
+                <div class="post--info-rating">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      viewBox="0 0 32 32"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M0 7v18h32V7zm2 2h28v14H2zm3 2.688v8.624h2v-8.625zm3.094 0v8.624H10V15.5l.906 4.813h1.281L13 15.5v4.813h1.813v-8.625H12l-.5 4.124l-.688-4.124zm7.812 0v8.5h2.406c1.301 0 1.79-.2 2.188-.5c.398-.2.594-.688.594-1.188v-5.188c0-.601-.196-1.113-.594-1.312c-.5-.2-.688-.313-2.188-.313zm6.188.124v8.5h1.812s.086-.601.188-.5c.199 0 1.008.375 1.406.375c.5 0 .7.008 1-.093c.398-.2.5-.48.5-.782v-5c0-.699-.71-1.218-1.313-1.218c-.601 0-1.175.394-1.375.594v-1.876zM18 13c.398 0 .813.008.813.406v5c0 .399-.512.407-.813.407zm6.594 1c.101 0 .218.105.218.406v4.281c0 .2-.019.407-.218.407c-.102 0-.188-.106-.188-.407v-4.28c0-.2-.011-.407.188-.407z"
+                      />
+                    </svg>
+                    <p>7.8</p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 48 48"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="4"
+                      >
+                        <path
+                          d="M24 44c11.046 0 20-7.387 20-16.5c0-6.442-4.475-11.799-11-14.516L29.5 14.5L30 20l-6.5-2l-6.5 2v-5.5l-3-1.516C8.022 15.837 4 21.393 4 27.5C4 36.613 12.954 44 24 44Z"
+                        />
+                        <path
+                          d="m23.5 4l3.809 5.117L36 9.91l-6.337 4.573L31.5 21l-8-3l-8 3l1.837-6.517L11 9.91l8.691-.793L23.5 4Z"
+                        />
+                      </g>
+                    </svg>
+                    <p>77%</p>
+                  </span>
+                </div>
+              </div>
+              <div class="post--info-text">
+                <div class="post--info-title">
+                  <p>Avatar</p>
+                </div>
+                <div class="post--info-description">
+                  <p>2022 | Sci-Fi, Action</p>
+                </div>
+                <div class="post--info-summary">
+                  <p>
+                    Jake Sully and Ney'tiri have formed a family and are doing
+                    everything to stay together. However, they must leave their
+                    home and explore the regions of Pandora. When an ancient
+                    threat resurfaces, Jake must fight a difficult war against
+                    the humans.
+                  </p>
+                </div>
+                <div class="post--info-stars">
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                </div>
+              </div>
+
+              <div class="post--info-trailer right">
+                <img src="img/icons/play icon.png" alt="play icon" />
+                <a href="#"> View Trailer </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post--img">
+              <img src="img/Dune.jpg" alt="Dune" />
+            </div>
+            <div class="post--title">
+              <p>Dune</p>
+            </div>
+            <div class="post--year">
+              <p>2021</p>
+            </div>
+            <div class="post--info ltr">
+              <div class="post--info-img">
+                <img src="img/Dune.jpg" alt="Dune" />
+                <div class="post--info-rating">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      viewBox="0 0 32 32"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M0 7v18h32V7zm2 2h28v14H2zm3 2.688v8.624h2v-8.625zm3.094 0v8.624H10V15.5l.906 4.813h1.281L13 15.5v4.813h1.813v-8.625H12l-.5 4.124l-.688-4.124zm7.812 0v8.5h2.406c1.301 0 1.79-.2 2.188-.5c.398-.2.594-.688.594-1.188v-5.188c0-.601-.196-1.113-.594-1.312c-.5-.2-.688-.313-2.188-.313zm6.188.124v8.5h1.812s.086-.601.188-.5c.199 0 1.008.375 1.406.375c.5 0 .7.008 1-.093c.398-.2.5-.48.5-.782v-5c0-.699-.71-1.218-1.313-1.218c-.601 0-1.175.394-1.375.594v-1.876zM18 13c.398 0 .813.008.813.406v5c0 .399-.512.407-.813.407zm6.594 1c.101 0 .218.105.218.406v4.281c0 .2-.019.407-.218.407c-.102 0-.188-.106-.188-.407v-4.28c0-.2-.011-.407.188-.407z"
+                      />
+                    </svg>
+                    <p>8.0</p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 48 48"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="4"
+                      >
+                        <path
+                          d="M24 44c11.046 0 20-7.387 20-16.5c0-6.442-4.475-11.799-11-14.516L29.5 14.5L30 20l-6.5-2l-6.5 2v-5.5l-3-1.516C8.022 15.837 4 21.393 4 27.5C4 36.613 12.954 44 24 44Z"
+                        />
+                        <path
+                          d="m23.5 4l3.809 5.117L36 9.91l-6.337 4.573L31.5 21l-8-3l-8 3l1.837-6.517L11 9.91l8.691-.793L23.5 4Z"
+                        />
+                      </g>
+                    </svg>
+                    <p>83%</p>
+                  </span>
+                </div>
+              </div>
+              <div class="post--info-text">
+                <div class="post--info-title">
+                  <p>Dune</p>
+                </div>
+                <div class="post--info-description">
+                  <p>2021 | Sci-Fi, Adventure</p>
+                </div>
+                <div class="post--info-summary">
+                  <p>
+                    Paul Atreides arrives on Arrakis after his father accepts
+                    the stewardship of the dangerous planet. However, chaos
+                    ensues after a betrayal as forces clash to control melange,
+                    a precious resource.
+                  </p>
+                </div>
+                <div class="post--info-stars">
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                </div>
+              </div>
+
+              <div class="post--info-trailer right">
+                <img src="img/icons/play icon.png" alt="play icon" />
+                <a href="#"> View Trailer </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post--img">
+              <img src="img/Tenet.jpg" alt="Tenet" />
+            </div>
+            <div class="post--title">
+              <p>Tenet</p>
+            </div>
+            <div class="post--year">
+              <p>2020</p>
+            </div>
+            <div class="post--info ltr">
+              <div class="post--info-img">
+                <img src="img/Tenet.jpg" alt="Tenet" />
+                <div class="post--info-rating">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      viewBox="0 0 32 32"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M0 7v18h32V7zm2 2h28v14H2zm3 2.688v8.624h2v-8.625zm3.094 0v8.624H10V15.5l.906 4.813h1.281L13 15.5v4.813h1.813v-8.625H12l-.5 4.124l-.688-4.124zm7.812 0v8.5h2.406c1.301 0 1.79-.2 2.188-.5c.398-.2.594-.688.594-1.188v-5.188c0-.601-.196-1.113-.594-1.312c-.5-.2-.688-.313-2.188-.313zm6.188.124v8.5h1.812s.086-.601.188-.5c.199 0 1.008.375 1.406.375c.5 0 .7.008 1-.093c.398-.2.5-.48.5-.782v-5c0-.699-.71-1.218-1.313-1.218c-.601 0-1.175.394-1.375.594v-1.876zM18 13c.398 0 .813.008.813.406v5c0 .399-.512.407-.813.407zm6.594 1c.101 0 .218.105.218.406v4.281c0 .2-.019.407-.218.407c-.102 0-.188-.106-.188-.407v-4.28c0-.2-.011-.407.188-.407z"
+                      />
+                    </svg>
+                    <p>7.3</p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 48 48"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="4"
+                      >
+                        <path
+                          d="M24 44c11.046 0 20-7.387 20-16.5c0-6.442-4.475-11.799-11-14.516L29.5 14.5L30 20l-6.5-2l-6.5 2v-5.5l-3-1.516C8.022 15.837 4 21.393 4 27.5C4 36.613 12.954 44 24 44Z"
+                        />
+                        <path
+                          d="m23.5 4l3.809 5.117L36 9.91l-6.337 4.573L31.5 21l-8-3l-8 3l1.837-6.517L11 9.91l8.691-.793L23.5 4Z"
+                        />
+                      </g>
+                    </svg>
+                    <p>69%</p>
+                  </span>
+                </div>
+              </div>
+              <div class="post--info-text">
+                <div class="post--info-title">
+                  <p>Tenet</p>
+                </div>
+                <div class="post--info-description">
+                  <p>2020 | Sci-Fi, Action</p>
+                </div>
+                <div class="post--info-summary">
+                  <p>
+                    When a few objects that can be manipulated and used as
+                    weapons in the future fall into the wrong hands, a CIA
+                    operative, known as the Protagonist, must save the world.
+                  </p>
+                </div>
+                <div class="post--info-stars">
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                </div>
+              </div>
+
+              <div class="post--info-trailer right">
+                <img src="img/icons/play icon.png" alt="play icon" />
+                <a href="#"> View Trailer </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post--img">
+              <img src="img/TTE.jpg" alt="The Theory of Everything" />
+            </div>
+            <div class="post--title">
+              <p>The Theory of Everything</p>
+            </div>
+            <div class="post--year">
+              <p>2014</p>
+            </div>
+            <div class="post--info rtl">
+              <div class="post--info-img">
+                <img src="img/TTE.jpg" alt="The Theory of Everything" />
+                <div class="post--info-rating">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      viewBox="0 0 32 32"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M0 7v18h32V7zm2 2h28v14H2zm3 2.688v8.624h2v-8.625zm3.094 0v8.624H10V15.5l.906 4.813h1.281L13 15.5v4.813h1.813v-8.625H12l-.5 4.124l-.688-4.124zm7.812 0v8.5h2.406c1.301 0 1.79-.2 2.188-.5c.398-.2.594-.688.594-1.188v-5.188c0-.601-.196-1.113-.594-1.312c-.5-.2-.688-.313-2.188-.313zm6.188.124v8.5h1.812s.086-.601.188-.5c.199 0 1.008.375 1.406.375c.5 0 .7.008 1-.093c.398-.2.5-.48.5-.782v-5c0-.699-.71-1.218-1.313-1.218c-.601 0-1.175.394-1.375.594v-1.876zM18 13c.398 0 .813.008.813.406v5c0 .399-.512.407-.813.407zm6.594 1c.101 0 .218.105.218.406v4.281c0 .2-.019.407-.218.407c-.102 0-.188-.106-.188-.407v-4.28c0-.2-.011-.407.188-.407z"
+                      />
+                    </svg>
+                    <p>7.3</p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 48 48"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="4"
+                      >
+                        <path
+                          d="M24 44c11.046 0 20-7.387 20-16.5c0-6.442-4.475-11.799-11-14.516L29.5 14.5L30 20l-6.5-2l-6.5 2v-5.5l-3-1.516C8.022 15.837 4 21.393 4 27.5C4 36.613 12.954 44 24 44Z"
+                        />
+                        <path
+                          d="m23.5 4l3.809 5.117L36 9.91l-6.337 4.573L31.5 21l-8-3l-8 3l1.837-6.517L11 9.91l8.691-.793L23.5 4Z"
+                        />
+                      </g>
+                    </svg>
+                    <p>69%</p>
+                  </span>
+                </div>
+              </div>
+              <div class="post--info-text">
+                <div class="post--info-title">
+                  <p>The Theory of Everything</p>
+                </div>
+                <div class="post--info-description">
+                  <p>2014 | Romance, Drama</p>
+                </div>
+                <div class="post--info-summary">
+                  <p>
+                    Stephen Hawking, an excellent astrophysics student working
+                    on his research, learns that he suffers from motor neurone
+                    disease and has around two years to live.
+                  </p>
+                </div>
+                <div class="post--info-stars">
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                </div>
+              </div>
+
+              <div class="post--info-trailer left">
+                <img src="img/icons/play icon.png" alt="play icon" />
+                <a href="#"> View Trailer </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post--img">
+              <img
+                src="img/A Boy Called Christmas.jpg"
+                alt="A Boy Called Christmas"
+              />
+            </div>
+            <div class="post--title">
+              <p>A Boy Called Christmas</p>
+            </div>
+            <div class="post--year">
+              <p>2022</p>
+            </div>
+            <div class="post--info rtl">
+              <div class="post--info-img">
+                <img
+                  src="img/A Boy Called Christmas.jpg"
+                  alt="A Boy Called Christmas"
+                />
+                <div class="post--info-rating">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      viewBox="0 0 32 32"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M0 7v18h32V7zm2 2h28v14H2zm3 2.688v8.624h2v-8.625zm3.094 0v8.624H10V15.5l.906 4.813h1.281L13 15.5v4.813h1.813v-8.625H12l-.5 4.124l-.688-4.124zm7.812 0v8.5h2.406c1.301 0 1.79-.2 2.188-.5c.398-.2.594-.688.594-1.188v-5.188c0-.601-.196-1.113-.594-1.312c-.5-.2-.688-.313-2.188-.313zm6.188.124v8.5h1.812s.086-.601.188-.5c.199 0 1.008.375 1.406.375c.5 0 .7.008 1-.093c.398-.2.5-.48.5-.782v-5c0-.699-.71-1.218-1.313-1.218c-.601 0-1.175.394-1.375.594v-1.876zM18 13c.398 0 .813.008.813.406v5c0 .399-.512.407-.813.407zm6.594 1c.101 0 .218.105.218.406v4.281c0 .2-.019.407-.218.407c-.102 0-.188-.106-.188-.407v-4.28c0-.2-.011-.407.188-.407z"
+                      />
+                    </svg>
+                    <p>6.7</p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 48 48"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="4"
+                      >
+                        <path
+                          d="M24 44c11.046 0 20-7.387 20-16.5c0-6.442-4.475-11.799-11-14.516L29.5 14.5L30 20l-6.5-2l-6.5 2v-5.5l-3-1.516C8.022 15.837 4 21.393 4 27.5C4 36.613 12.954 44 24 44Z"
+                        />
+                        <path
+                          d="m23.5 4l3.809 5.117L36 9.91l-6.337 4.573L31.5 21l-8-3l-8 3l1.837-6.517L11 9.91l8.691-.793L23.5 4Z"
+                        />
+                      </g>
+                    </svg>
+                    <p>74%</p>
+                  </span>
+                </div>
+              </div>
+              <div class="post--info-text">
+                <div class="post--info-title">
+                  <p>A Boy Called Christmas</p>
+                </div>
+                <div class="post--info-description">
+                  <p>2021 | Fantasy, Family</p>
+                </div>
+                <div class="post--info-summary">
+                  <p>
+                    An ordinary young boy called Nikolas sets out on an
+                    adventure into the snowy north in search of his father who
+                    is on a quest to discover the fabled village of the elves,
+                    Elfhelm. Taking with him a headstrong reindeer called
+                    Blitzen and a loyal pet mouse, Nikolas soon meets his
+                    destiny.
+                  </p>
+                </div>
+                <div class="post--info-stars">
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                  <img src="img/icons/star icon.png" alt="star icon" />
+                </div>
+              </div>
+
+              <div class="post--info-trailer left">
+                <img src="img/icons/play icon.png" alt="play icon" />
+                <a href="#"> View Trailer </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post--img">
+              <img
+                src="img/Godzilla.jpg"
+                alt="Godzilla: King of the Monsters"
+              />
+            </div>
+            <div class="post--title">
+              <p>Godzilla: King of the Monsters</p>
+            </div>
+            <div class="post--year">
+              <p>2019</p>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post--img">
+              <img src="img/Little Women.jpg" alt="Little Women" />
+            </div>
+            <div class="post--title">
+              <p>Little Women</p>
+            </div>
+            <div class="post--year">
+              <p>2019</p>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post--img">
+              <img
+                src="img/The Mitchells vs. The Machines.jpg"
+                alt="The Mitchells vs. The Machines"
+              />
+            </div>
+            <div class="post--title">
+              <p>The Mitchells vs. The Machines</p>
+            </div>
+            <div class="post--year">
+              <p>2021</p>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post--img">
+              <img src="img/Stronger.jpg" alt="Stronger" />
+            </div>
+            <div class="post--title">
+              <p>Stronger</p>
+            </div>
+            <div class="post--year">
+              <p>2017</p>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post--img">
+              <img
+                src="img/Puss in Boots.jpg"
+                alt="Puss in Boots: The Last Wish"
+              />
+            </div>
+            <div class="post--title">
+              <p>Puss in Boots: The Last Wish</p>
+            </div>
+            <div class="post--year">
+              <p>2022</p>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post--img">
+              <img src="img/A Man Called Otto.jpg" alt="A Man Called Otto" />
+            </div>
+            <div class="post--title">
+              <p>A Man Called Otto</p>
+            </div>
+            <div class="post--year">
+              <p>2022</p>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post--img">
+              <img src="img/M3GAN.jpg" alt="M3GAN" />
+            </div>
+            <div class="post--title">
+              <p>M3GAN</p>
+            </div>
+            <div class="post--year">
+              <p>2022</p>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post--img">
+              <img src="img/Black Mass.jpg" alt="Black Mass" />
+            </div>
+            <div class="post--title">
+              <p>Black Mass</p>
+            </div>
+            <div class="post--year">
+              <p>2015</p>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post--img">
+              <img
+                src="img/Jurassic World.jpg"
+                alt="Jurassic World: Fallen Kingdom"
+              />
+            </div>
+            <div class="post--title">
+              <p>Jurassic World: Fallen Kingdom</p>
+            </div>
+            <div class="post--year">
+              <p>2018</p>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="post--img">
+              <img src="img/Ambulance.jpg" alt="Ambulance" />
+            </div>
+            <div class="post--title">
+              <p>Ambulance</p>
+            </div>
+            <div class="post--year">
+              <p>2022</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      document
+        .querySelector(".aside--navigation-filter")
+        .addEventListener("click", function () {
+          document.querySelector(".menu-filter").style.opacity = "1";
+        });
+      document
+        .querySelector(".aside--navigation-filter")
+        .addEventListener("click", function () {
+          document.querySelector(".menu-filter").style.visibility = "visible";
+        });
+      document
+        .querySelector(".aside--navigation-filter")
+        .addEventListener("click", function () {
+          document.querySelector(".menu-filter").style.transform =
+            "translate(0)";
+        });
+      document
+        .getElementsByClassName("close-tag")
+        .addEventListener("click", function () {
+          document.getElementsByClassName("tag").style.display = "none";
+        });
+    </script>
+  </body>
+</html>

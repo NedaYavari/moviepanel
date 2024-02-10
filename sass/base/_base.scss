@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include respond (tab-land) {
+      font-size: 56.25%;
+    }
+
+    @include respond (tab-port) {
+      font-size: 50%;
+    }
+
+    @include respond (big-screen) {
+      font-size: 75%;
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: $color-primary-light-1;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: $color-primary-light-2;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: $color-primary-dark-2;
+      }
+}
+
+body {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    color: $color-white;
+}
